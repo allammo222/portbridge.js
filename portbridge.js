@@ -19,7 +19,7 @@ require('readline').createInterface({
         var logString = ''+localListenPort+' => '+remoteHost+':'+remotePort;
     
         net.createServer(function(localSocket){
-            var remoteSocket = net.createConnection(parseInt(parseInt), remoteHost, function(){
+            var remoteSocket = net.createConnection(parseInt(remotePort), remoteHost, function(){
                 localSocket.on('data', function(data){
                     console.log('>> '+logString);
                     remoteSocket.write(data);
